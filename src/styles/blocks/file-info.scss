@@ -1,0 +1,30 @@
+@import "../modules/variables";
+
+.file-info {
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: .3rem;
+  }
+
+  &__details {
+    display: flex;
+    gap: 1rem;
+    opacity: .6;
+    font-size: 1rem;
+    span:first-of-type {
+      position: relative;
+      &::after {
+        position: absolute;
+        right: -0.5rem;
+        top: 0.5rem;
+        content: "";
+        display: block;
+        height: 2px;
+        width: 2px;
+        background-color: black;
+        border-radius: 50%;
+      }
+    }
+  }
+}

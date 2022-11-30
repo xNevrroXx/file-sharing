@@ -1,0 +1,42 @@
+@import "./modules/variables";
+@import "./modules/fonts";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: $main-font;
+}
+body {
+  padding: 2rem;
+  background: radial-gradient(circle farthest-side at center, #eeecdc 5%, #edbc51 15%, #f27b20 25%, #3367b8 60%, #5321aa 75%, #292530 90%);
+  width: 100vw;
+  height: 100vh;
+}
+
+/* scrollbars */
+    * {
+      scrollbar-width: thin;          /* "auto" или "thin"  */
+      scrollbar-color: #292530 $gray-color;   /* плашка скролла и дорожка */
+    }
+    *::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+    *::-webkit-scrollbar-button {
+      background-color: $gray-color;
+    }
+    *::-webkit-scrollbar-thumb {
+      background-color: rgba(black, .7);
+      border-radius: 10px;
+      transition: .125s all;
+      &:hover {
+        background-color: rgba(black, 1);
+      }
+    }
+/* END scrollbars */
+
+@import "./blocks/logo";
+@import "./blocks/modal";
+@import "./blocks/button";
+@import "./blocks/file-info";

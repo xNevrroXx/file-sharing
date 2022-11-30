@@ -1,0 +1,159 @@
+@import "../modules/variables";
+
+.modal {
+  position: absolute;
+  left: 10rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1.5rem 2rem;
+  width: 25rem;
+  height: 34rem;
+  background-color: $gray-color;
+  box-shadow: 0 0 12px 0 rgba(black, 0.1);
+  border-radius: 10px;
+
+  &_share {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__wrapper-low-elems {
+
+  }
+
+  &__share-form {
+    input {
+      display: block;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      overflow: hidden;
+
+      &:focus + *, &:focus-visible + * {
+        circle {
+          fill: rgb($main-color, 20%);
+        }
+      }
+    }
+  }
+
+  &__uploader-list {
+    position: relative;
+    height: max-content;
+    &::after {
+      position: absolute;
+      bottom: -1rem;
+      opacity: .8;
+      content: "";
+      display: block;
+      background: linear-gradient(to right, $gray-color, $main-color, $gray-color);
+      height: 2px;
+      width: 100%;
+      border-radius: 1rem;
+    }
+  }
+  &__file-list {
+    height: 20rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    li {
+      list-style-type: none;
+      position: relative;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+      }
+      &::after {
+        position: absolute;
+        bottom: -.5rem;
+        content: "";
+        display: block;
+        background: #bdbdbd;
+        height: 1px;
+        width: 100%;
+        border-radius: 1rem;
+      }
+    }
+  }
+  &__add-files {
+    height: max-content;
+    margin-top: auto;
+  }
+
+  &__add-files-custom-bottom {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    &:hover {
+      circle {
+        fill: rgb($main-color, 20%);
+      }
+    }
+  }
+  &__add-files-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $main-color;
+    circle {
+      transition: .125s all;
+      fill: transparent;
+    }
+  }
+  &__add-files-description {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+  &__add-files-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  &__add-files-info {
+    display: flex;
+    gap: 1rem;
+    opacity: .6;
+    span {
+      font-size: 1rem;
+      line-height: 1rem;
+      &:first-of-type {
+        position: relative;
+        &::after {
+          position: absolute;
+          right: -0.5rem;
+          top: 0.5rem;
+          content: "";
+          display: block;
+          height: 2px;
+          width: 2px;
+          background-color: black;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  &__get-link-btn {
+    display: block;
+    margin: 0 auto;
+    color: $gray-color;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: $main-color;
+    border: solid 2px $main-color;
+    border-radius: 1.5rem;
+    width: 15rem;
+    height: 3rem;
+    &:hover, &:focus, &:focus-visible {
+      background-color: $gray-color;
+      outline: none;
+      color: $main-color;
+    }
+  }
+}

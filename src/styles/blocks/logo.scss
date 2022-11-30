@@ -1,0 +1,8 @@
+@import "../modules/variables";
+
+.logo {
+  mix-blend-mode: difference;
+  svg {
+    fill: $gray-color;
+  }
+}

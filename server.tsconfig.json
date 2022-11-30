@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "CommonJS",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src/server/**/*.ts"
+  ]
+}

@@ -1,0 +1,8 @@
+# folders
+node_modules
+buildJS
+dist
+.idea
+
+# files
+.env.json

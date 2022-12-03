@@ -1,0 +1,43 @@
+@import "../modules/variables";
+
+.circle-indicator {
+  margin: 0 auto;
+  position: relative;
+  svg {
+    transform: rotate(-90deg);
+  }
+  &__round {
+    fill: none;
+    stroke: #ebebeb;
+    stroke-width: 4px;
+  }
+  &__indicator {
+    fill: none;
+    stroke: $main-color;
+    stroke-width: 6px;
+    stroke-dasharray: 327px;
+    stroke-dashoffset: 200px;
+    stroke-linecap: round;
+  }
+  &__uploaded-percentage {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .1rem;
+    width: max-content;
+    height: 3.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+  &__number {
+    font-size: 4rem;
+    line-height: 3rem;
+  }
+  &__percentage {
+    align-self: flex-start;
+    font-size: 1.5rem;
+    color: $dim-color;
+  }
+}

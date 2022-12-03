@@ -21,17 +21,17 @@ body {
       scrollbar-color: #292530 $gray-color;   /* плашка скролла и дорожка */
     }
     *::-webkit-scrollbar {
-      width: 0.5rem;
+      width: 5px;
     }
     *::-webkit-scrollbar-button {
       background-color: $gray-color;
     }
     *::-webkit-scrollbar-thumb {
-      background-color: rgba(black, .7);
+      background-color: rgba(0,0,0,.15);
       border-radius: 10px;
       transition: .125s all;
       &:hover {
-        background-color: rgba(black, 1);
+        background-color: rgba(0,0,0,.25);
       }
     }
 /* END scrollbars */
@@ -40,3 +40,4 @@ body {
 @import "./blocks/modal";
 @import "./blocks/button";
 @import "./blocks/file-info";
+@import "./blocks/circle-indicator";

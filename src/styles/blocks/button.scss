@@ -1,4 +1,21 @@
+@import "../modules/variables.scss";
+
 button {
   cursor: pointer;
   transition: .2s all;
+  display: block;
+  margin: 0 auto;
+  color: $gray-color;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: $main-color;
+  border: solid 2px $main-color;
+  border-radius: 1.5rem;
+  width: 12rem;
+  height: 3rem;
+  &:hover, &:focus, &:focus-visible {
+    background-color: $gray-color;
+    outline: none;
+    color: $main-color;
+  }
 }

@@ -3,6 +3,9 @@
 button {
   cursor: pointer;
   transition: .2s all;
+}
+
+.button {
   display: block;
   margin: 0 auto;
   color: $gray-color;
@@ -13,7 +16,11 @@ button {
   border-radius: 1.5rem;
   width: 12rem;
   height: 3rem;
-  &:hover, &:focus, &:focus-visible {
+  &:disabled {
+    background-color: $dim-color;
+    border: $dim-color;
+  }
+  &:not(:disabled):hover, &:not(:disabled):focus, &:not(:disabled):focus-visible {
     background-color: $gray-color;
     outline: none;
     color: $main-color;

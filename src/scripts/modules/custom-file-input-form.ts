@@ -58,8 +58,8 @@ function customFileInputForm({ containerSelector, inputSelector, customInputSele
 
     for (let i = 0; i < fileList.length; i++) {
       const file = fileList[i];
-      const fileType = file.name.slice(file.name.lastIndexOf(".") + 1);
-      const fileName = file.name.replace("." + fileType, "");
+      const fileExtension = file.name.split(".").pop();
+      const fileName = file.name.replace("." + fileExtension, "");
       const convertedSize = conversionSizeUnits(file.size);
 
       const fileElem = document.createElement("li");
@@ -70,7 +70,7 @@ function customFileInputForm({ containerSelector, inputSelector, customInputSele
           <div class="file-info__title">${fileName}</div>
           <div class="file-info__details">
             <span class="file-info__size">${convertedSize.size} ${convertedSize.units}</span>
-            <span class="file-info__mime-type">${fileType}</span>
+            <span class="file-info__mime-type">${fileExtension}</span>
           </div>
           <button data-index="${i}" class="modal-choosing-files__remove-file">
             <svg

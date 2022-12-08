@@ -11,14 +11,18 @@
   background-color: $gray-color;
   box-shadow: 0 0 12px 0 rgba(black, 0.1);
   border-radius: 10px;
+  & > div {
+    &.active {
+      display: flex;
+    }
+  }
 
   &-choosing-files {
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
-
     &__plug {
       display: none;
       color: $dim-color;
@@ -176,7 +180,7 @@
     &__info {
       text-align: center
     }
-    &__count-files {
+    &__count-files-info {
       text-align: center;
       margin-bottom: .2rem;
     }
@@ -188,7 +192,7 @@
   &-transferred {
     width: 100%;
     height: 100%;
-    display: none; // todo none
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     padding-top: 2rem;
@@ -222,6 +226,13 @@
         text-decoration: underline;
         border: none;
         background: transparent;
+      }
+    }
+
+    &__copy-link {
+      &.link {
+        word-break: break-all;
+        height: 7rem;
       }
     }
   }

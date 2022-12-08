@@ -6,9 +6,9 @@ function htmlRoutes(app: Express) {
     response.render("sharing");
   })
 
-  app.get("/download/:id", (request, response) => {
+  app.get("/:path", (request, response) => {
     response.render("getting", {
-      senderId: request.params.id
+      senderId: request.params.path
     });
   })
 }

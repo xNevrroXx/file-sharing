@@ -1,6 +1,6 @@
 <div class="modal modal_share">
   <!--chose files-->
-  <div class="modal__chose-files modal-choosing-files">
+  <div class="modal__chose-files modal-choosing-files active">
     <div class="modal__wrapper-up-elems">
       <div class="modal-choosing-files__plug active">
         There are no chosen files yet...
@@ -13,7 +13,7 @@
 
     <div class="modal__wrapper-down-elems">
       <form class="modal-choosing-files__share-form">
-        <input type="file" multiple>
+        <input name="files" type="file" multiple>
 
         <div class="modal-choosing-files__add-files-custom-bottom">
           <div class="modal-choosing-files__add-files-image">
@@ -73,14 +73,14 @@
               <circle class="circle-indicator__round" cx="53" cy="53" r="50" />
               <circle class="circle-indicator__indicator" cx="53" cy="53" r="50" />
             </svg>
-            <div class="circle-indicator__uploaded-percentage"><span class="circle-indicator__number">10</span><span class="circle-indicator__percentage">%</span></div>
+            <div class="circle-indicator__uploaded-percentage"><span class="circle-indicator__number">0</span><span class="circle-indicator__percentage">%</span></div>
           </div>
         </div>
         <div class="modal-transferring__title">Transferring...</div>
         <div class="modal-transferring__info">
-          <div class="modal-transferring__count-files">Sending 1 file</div>
+          <div class="modal-transferring__count-files-info">Sending <span class="modal-transferring__count-files"></span> file</div>
           <div class="modal-transferring__size-info">
-            <span class="modal-transferring__uploaded-size">10.0 MB</span> of <span class="modal-transferring__total-size">155.5 MB</span> uploaded
+            <span class="modal-transferring__uploaded-size">0 Bytes</span> of <span class="modal-transferring__total-size">0 Bytes</span> uploaded
           </div>
         </div>
       </div>
@@ -106,11 +106,11 @@
       </div>
       <h3 class="modal-transferred__success-title">You're done!</h3>
       <p class="modal-transferred__success-description">Copy your download link or
-        <button class="">see what's inside</button>
+        <button class="modal-transferred__what-is-inside">see what's inside</button>
       </p>
     </div>
     <div class="modal__wrapper-down-elems">
-      <button class="button">Copy link</button>
+      <button class="modal-transferred__copy-link button">Copy link</button>
     </div>
   </div>
 </div>

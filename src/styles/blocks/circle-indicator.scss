@@ -15,9 +15,10 @@
     fill: none;
     stroke: $main-color;
     stroke-width: 6px;
-    stroke-dasharray: 327px;
-    stroke-dashoffset: 200px;
+    stroke-dasharray: 314px;
+    stroke-dashoffset: 314px;
     stroke-linecap: round;
+    transition: .125s all ease;
   }
   &__uploaded-percentage {
     position: absolute;

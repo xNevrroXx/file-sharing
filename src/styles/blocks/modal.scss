@@ -200,7 +200,7 @@
 
     &__success-icon {
       width: 100%;
-      height: 7rem;
+      height: 9rem;
       margin-bottom: 1rem;
       svg {
         width: 100%;
@@ -221,6 +221,7 @@
       margin-bottom: 1rem;
     }
     &__success-description {
+      margin-bottom: 1rem;
       button {
         color: #3384e4;
         text-decoration: underline;
@@ -229,11 +230,19 @@
       }
     }
 
+    &__link {
+      padding-left: 1rem;
+      background-color: transparent;
+      border-radius: 5px;
+      border: 1px $dim-color solid;
+      word-break: break-all;
+      height: 3rem;
+      width: 100%;
+    }
     &__copy-link {
-      &.link {
-        word-break: break-all;
-        height: 7rem;
-      }
+    }
+    .modal__wrapper-up-elems {
+      height: max-content;
     }
   }
 

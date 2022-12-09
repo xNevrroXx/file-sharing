@@ -95,16 +95,21 @@ window.addEventListener("DOMContentLoaded", () => {
     transferredModalElem.classList.add("active");
 
     const jsonServerResponse = JSON.parse(serverResponse);
-    const copyLinkElem = transferredModalElem.querySelector(".modal-transferred__copy-link");
-    copyLinkElem.addEventListener("click", function (event) {
-      console.log(window.location);
-      this.textContent = window.location + jsonServerResponse.path;
-      this.classList.add("link");
-      navigator.clipboard.writeText(this.textContent)
-        .then(() => alert("Link has been copied"))
+    const linkTextElem: HTMLInputElement = transferredModalElem.querySelector(".modal-transferred__link");
+    const copyLinkBtnElem = transferredModalElem.querySelector(".modal-transferred__copy-link");
+
+    linkTextElem.value = window.location + jsonServerResponse.path;
+    linkTextElem.addEventListener("click", function (event) {
+      this.setSelectionRange(0, -1);
     })
-
-    console.log("serverResponse: ", serverResponse);
-
+    copyLinkBtnElem.addEventListener("click", function (event) {
+      navigator.clipboard.writeText(linkTextElem.value)
+        .then(() => alert("Link has been copied"))
+        .catch(() => alert("We can't to copy link automatically, try it on your own"))
+        .finally(() => {
+          linkTextElem.focus();
+          linkTextElem.setSelectionRange(0, -1);
+        })
+    })
   }
 })

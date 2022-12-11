@@ -25,4 +25,7 @@ button {
     outline: none;
     color: $main-color;
   }
+  &_rectangle {
+    border-radius: 5px;
+  }
 }

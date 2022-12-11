@@ -72,20 +72,22 @@ function customFileInputForm({ containerSelector, inputSelector, customInputSele
             <span class="file-info__size">${convertedSize.size} ${convertedSize.units}</span>
             <span class="file-info__mime-type">${fileExtension}</span>
           </div>
-          <button data-index="${i}" class="modal-choosing-files__remove-file">
-            <svg
-              width="32px"
-              height="32px"
-              viewBox="0 0 32 32"
-              xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-              xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:svg="http://www.w3.org/2000/svg">
-              <path
-                d="m 1.5978827,1.5008904 c 1.3348509,-1.33452052 3.4984303,-1.33452052 4.8332809,0 l 9.6658794,9.6663016 9.665878,-9.6663016 c 1.33451,-1.33452052 3.49843,-1.33452052 4.83294,0 1.334852,1.3348619 1.334852,3.498459 0,4.8329794 l -9.665878,9.6663022 9.665878,9.665956 c 1.334509,1.334523 1.334509,3.49846 0,4.83298 -1.33451,1.334523 -3.49843,1.334523 -4.83294,0 l -9.665878,-9.665956 -9.6658794,9.665956 c -1.3348506,1.334523 -3.49843,1.334523 -4.8332809,0 -1.33451025,-1.33452 -1.33451025,-3.498457 0,-4.83298 L 11.264104,16.000172 1.5978827,6.3338698 c -1.33451025,-1.3345204 -1.33451025,-3.4981175 0,-4.8329794 z"
-              />
-            </svg>
-          </button>
+          <div class="modal-choosing-files__removi-file-wrapper">
+            <button data-index="${i}" class="modal-choosing-files__remove-file">
+              <svg
+                width="32px"
+                height="32px"
+                viewBox="0 0 32 32"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg">
+                <path
+                  d="m 1.5978827,1.5008904 c 1.3348509,-1.33452052 3.4984303,-1.33452052 4.8332809,0 l 9.6658794,9.6663016 9.665878,-9.6663016 c 1.33451,-1.33452052 3.49843,-1.33452052 4.83294,0 1.334852,1.3348619 1.334852,3.498459 0,4.8329794 l -9.665878,9.6663022 9.665878,9.665956 c 1.334509,1.334523 1.334509,3.49846 0,4.83298 -1.33451,1.334523 -3.49843,1.334523 -4.83294,0 l -9.665878,-9.665956 -9.6658794,9.665956 c -1.3348506,1.334523 -3.49843,1.334523 -4.8332809,0 -1.33451025,-1.33452 -1.33451025,-3.498457 0,-4.83298 L 11.264104,16.000172 1.5978827,6.3338698 c -1.33451025,-1.3345204 -1.33451025,-3.4981175 0,-4.8329794 z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       `;
 

@@ -1,5 +1,7 @@
 .separator {
   position: relative;
+  display: inline-block;
+  height: 100%;
   &::after {
     position: relative;
     top: 0.5rem;
@@ -9,5 +11,34 @@
     width: 2px;
     background-color: black;
     border-radius: 50%;
+  }
+}
+
+
+.separator-line {
+  position: relative;
+  &::before {
+    position: absolute;
+    top: -1rem;
+    opacity: .8;
+    content: "";
+    display: block;
+    background: linear-gradient(to right, $gray-color, $main-color, $gray-color);
+    height: 2px;
+    left: 0;
+    width: 100%;
+    border-radius: 1rem;
+  }
+  &_gray-line {
+    &::before {
+      top: 0;
+      background: linear-gradient(to right, $gray-color, $dim-color, $gray-color);
+    }
+  }
+  &_bottom {
+    &::before {
+      top: auto;
+      bottom: 0;
+    }
   }
 }

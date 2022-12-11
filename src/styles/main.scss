@@ -13,6 +13,7 @@ body {
   background: radial-gradient(circle farthest-side at center, #eeecdc 5%, #edbc51 15%, #f27b20 25%, #3367b8 60%, #5321aa 75%, #292530 90%);
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* scrollbars */
@@ -42,3 +43,4 @@ body {
 @import "./blocks/file-info";
 @import "./blocks/circle-indicator";
 @import "./blocks/separator";
+@import "./blocks/file-element";

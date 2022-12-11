@@ -1,0 +1,44 @@
+@import "../modules/variables";
+
+.file-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25rem;
+  height: 5rem;
+  border: none;
+  box-shadow: 0 0 1px black;
+  border-radius: 4px;
+  padding-left: 3rem;
+  padding-right: 1.5rem;
+
+  &__description {
+    width: max-content;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+  }
+
+  &__size {
+    font-size: .9rem;
+    color: $muffled-color;
+  }
+
+  &__download-one-file-btn {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: transparent;
+    border: none;
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $main-color;
+    }
+    &:hover, &:focus, &:focus-visible {
+      svg {
+        fill: $darker-main-color;
+      }
+    }
+  }
+}

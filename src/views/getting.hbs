@@ -1,6 +1,124 @@
-<h1>It's getting handlebar</h1>
-<div class="container">
-    <main>
-    </main>
+<div class="modal modal_get">
+  <!--getting files-->
+  <div class="modal__getting modal-getting">
+    <div class="modal__wrapper-up-elems">
+      <div class="modal-getting__wrapper">
+        <div class="modal-getting__getting-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 52.496 52.496">
+            <path d="M24.07,52.496L1.566,30.114h13.453c-0.092-12.759,5.383-18.767,5.622-19.022C32.105-2.688,48.197,0.252,48.356,0.284
+            l2.574,0.5l-2.253,1.341C31.546,12.319,32.442,26.667,32.939,30.114h13.635L24.07,52.496z M6.414,32.114L24.07,49.676l17.656-17.562
+            H31.315L31.13,31.35c-0.043-0.177-3.88-17.07,14.022-29.346c-4.86-0.114-15.094,0.894-23.013,10.41
+            c-0.091,0.1-5.481,6.089-5.103,18.67l0.03,1.03H6.414z"
+            />
+          </svg>
+        </div>
+        <h3 class="modal-getting__title">Ready when you are</h3>
+        <p class="modal-getting__expires-period-description">Transfer expires in 7 days</p>
+      </div>
+
+      <button class="modal-getting__check-transfer-files-btn separator-line separator-line_gray-line">
+        <div class="modal-getting__mini-files-info-wrapper">
+          <div class="modal-getting__amount-files-info">
+            <span class="modal-getting__amount-files">3</span> files
+          </div>
+          <div class="modal-getting__size-files-wrapper">
+            <span class="modal-getting__size-files">3 MB</span>
+          </div>
+        </div>
+        <span class="modal-getting__check-preview-text">Preview</span>
+      </button>
+    </div>
+    <div class="separator-line">
+      <button class="modal-getting__download-btn button">Download</button>
+    </div>
+  </div>
 </div>
-sender id: {{senderId}}
+
+<div class="modal modal_right-full-height">
+  <header class="modal__header separator-line separator-line_gray-line separator-line_bottom">
+    <button class="modal__close-btn">
+      <svg
+        width="32px"
+        height="32px"
+        viewBox="0 0 32 32"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg">
+        <path
+          d="m 1.5978827,1.5008904 c 1.3348509,-1.33452052 3.4984303,-1.33452052 4.8332809,0 l 9.6658794,9.6663016 9.665878,-9.6663016 c 1.33451,-1.33452052 3.49843,-1.33452052 4.83294,0 1.334852,1.3348619 1.334852,3.498459 0,4.8329794 l -9.665878,9.6663022 9.665878,9.665956 c 1.334509,1.334523 1.334509,3.49846 0,4.83298 -1.33451,1.334523 -3.49843,1.334523 -4.83294,0 l -9.665878,-9.665956 -9.6658794,9.665956 c -1.3348506,1.334523 -3.49843,1.334523 -4.8332809,0 -1.33451025,-1.33452 -1.33451025,-3.498457 0,-4.83298 L 11.264104,16.000172 1.5978827,6.3338698 c -1.33451025,-1.3345204 -1.33451025,-3.4981175 0,-4.8329794 z"
+        />
+      </svg>
+    </button>
+    <nav>
+      <ul>
+        <!--There are no menu elements yet-->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header class="modal-getting__transfer-header separator-line separator-line_gray-line separator-line_bottom">
+      <div class="modal-getting__left-header">
+        <div class="modal-getting__title">Items in this transfer</div>
+        <div class="modal-getting__mini-transfer-info">
+          <span class="modal-getting__amount-files">3</span> files, <span class="modal-getting__size-files">3 MB</span>・Transfer
+          expires in <span class="modal-getting__expiration-time">7</span> days
+        </div>
+      </div>
+      <div class="modal-getting__right-header">
+        <button class="modal-getting__download-all-btn button button_rectangle">Download all</button>
+      </div>
+    </header>
+
+    <div class="modal-getting__wrapper-file-list">
+      <ul class="modal-getting__file-list">
+        <li class="modal-getting__file-element file-element">
+          <div class="file-element__description-file">
+            <div class="file-element__title">Montserrat.zip</div>
+            <div class="file-element__size">1.8 MB</div>
+          </div>
+          <button class="file-element__download-one-file-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10 10-4.477 10-10zm-9 1.492V7.998C13 7.446 12.552 7
+              12 7c-.556 0-1 .447-1 .998v5.48l-2.53-2.53c-.385-.385-1.022-.39-1.413.002-.393.393-.39 1.022-.002
+              1.412l4.247
+              4.247c.192.19.447.288.702.288.26.003.514-.095.708-.29l4.247-4.246c.383-.385.387-1.022-.003-1.412-.394-.393-1.023-.392-1.413-.002L13
+              13.492zM0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12z"></path>
+            </svg>
+          </button>
+        </li>
+        <li class="modal-getting__file-element file-element">
+          <div class="file-element__description-file">
+            <div class="file-element__title">Roboto.zip</div>
+            <div class="file-element__size">3 MB</div>
+          </div>
+          <button class="file-element__download-one-file-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10 10-4.477 10-10zm-9 1.492V7.998C13 7.446 12.552 7
+              12 7c-.556 0-1 .447-1 .998v5.48l-2.53-2.53c-.385-.385-1.022-.39-1.413.002-.393.393-.39 1.022-.002
+              1.412l4.247
+              4.247c.192.19.447.288.702.288.26.003.514-.095.708-.29l4.247-4.246c.383-.385.387-1.022-.003-1.412-.394-.393-1.023-.392-1.413-.002L13
+              13.492zM0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12z"></path>
+            </svg>
+          </button>
+        </li>
+        <li class="modal-getting__file-element file-element">
+          <div class="file-element__description-file">
+            <div class="file-element__title">Roboto.zip</div>
+            <div class="file-element__size">3 MB</div>
+          </div>
+          <button class="file-element__download-one-file-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10 10-4.477 10-10zm-9 1.492V7.998C13 7.446 12.552 7
+              12 7c-.556 0-1 .447-1 .998v5.48l-2.53-2.53c-.385-.385-1.022-.39-1.413.002-.393.393-.39 1.022-.002
+              1.412l4.247
+              4.247c.192.19.447.288.702.288.26.003.514-.095.708-.29l4.247-4.246c.383-.385.387-1.022-.003-1.412-.394-.393-1.023-.392-1.413-.002L13
+              13.492zM0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12z"></path>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </main>
+</div>

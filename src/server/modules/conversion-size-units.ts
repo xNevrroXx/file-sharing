@@ -25,4 +25,4 @@ function conversionSizeUnits(bytes: number): {amount: string, units: string} {
   };
 }
 
-export default conversionSizeUnits;
+module.exports = conversionSizeUnits;

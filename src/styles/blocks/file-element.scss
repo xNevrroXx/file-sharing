@@ -12,12 +12,16 @@
   padding-left: 3rem;
   padding-right: 1.5rem;
 
-  &__description {
-    width: max-content;
+  &__description-file {
+    width: 18rem;
   }
 
   &__title {
     font-size: 1.2rem;
+    text-wrap: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
   }
 
   &__size {

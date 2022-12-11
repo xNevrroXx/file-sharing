@@ -69,11 +69,11 @@ function customFileInputForm({ containerSelector, inputSelector, customInputSele
         <div class="modal-choosing-files__file-info file-info">
           <div class="file-info__title">${fileName}</div>
           <div class="file-info__details">
-            <span class="file-info__size">${convertedSize.size} ${convertedSize.units}</span>
+            <span class="file-info__size">${convertedSize.amount} ${convertedSize.units}</span>
             <span class="file-info__mime-type">${fileExtension}</span>
           </div>
           <div class="modal-choosing-files__removi-file-wrapper">
-            <button data-index="${i}" class="modal-choosing-files__remove-file">
+            <button title="delete file" data-index="${i}" class="modal-choosing-files__remove-file">
               <svg
                 width="32px"
                 height="32px"
@@ -104,7 +104,7 @@ function customFileInputForm({ containerSelector, inputSelector, customInputSele
     }
     
     const convertedSize = conversionSizeUnits(totalSize);
-    totalDescriptionElems.size.textContent = convertedSize.size + " " + convertedSize.units;
+    totalDescriptionElems.size.textContent = convertedSize.amount + " " + convertedSize.units;
   }
   function getReadyStateUploadButton() {
     uploadBtnElem.disabled = inputElem.files.length <= 0;

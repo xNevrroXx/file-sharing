@@ -80,8 +80,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const loadedConversionedSize = conversionSizeUnits(loadedSize);
       const totalConversionedSize = conversionSizeUnits(totalSize);
-      transferringModalElem.querySelector(fullInfoSelectors.loaded).textContent = loadedConversionedSize.size + " " + loadedConversionedSize.units;
-      transferringModalElem.querySelector(fullInfoSelectors.total).textContent = totalConversionedSize.size + " " + totalConversionedSize.units;
+      transferringModalElem.querySelector(fullInfoSelectors.loaded).textContent = loadedConversionedSize.amount + " " + loadedConversionedSize.units;
+      transferringModalElem.querySelector(fullInfoSelectors.total).textContent = totalConversionedSize.amount + " " + totalConversionedSize.units;
 
       const amountPercentage = loadedSize / (totalSize / 100);
       transferringModalElem.querySelector(circleIndicatorSelectors.numberPercentages).textContent = amountPercentage.toFixed(0);
@@ -121,6 +121,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // getting files from the server
     const previewModal = document.querySelector(".modal_right-full-height");
     const showPreviewBtn = document.querySelector(".modal-getting__check-transfer-files-btn");
+    const downloadAllFilesBtns = document.querySelectorAll(".modal-getting__download-all-btn");
+    const downloadOneFileBtns = document.querySelectorAll(".file-element__download-one-file-btn");
     const closePreviewModalBtn = previewModal.querySelector(".modal__close-btn");
 
     const previewModalBtns = previewModal.querySelectorAll("button");
@@ -140,5 +142,24 @@ window.addEventListener("DOMContentLoaded", () => {
       previewModal.classList.remove("active");
       previewModalBtns.forEach(btnElem => btnElem.setAttribute("tabindex", "-1"));
     });
+
+    downloadAllFilesBtns.forEach(downloadAllBtn => {
+      downloadAllBtn.addEventListener("click", () => {
+        const downloadLink = document.createElement("a");
+        downloadLink.href = window.location.origin + "/download" + window.location.pathname;
+        downloadLink.download = "";
+        downloadLink.click();
+        downloadLink.remove();
+      })
+    })
+    downloadOneFileBtns.forEach(downloadBtn => {
+      downloadBtn.addEventListener("click", function(event) {
+        const downloadLink = document.createElement("a");
+        downloadLink.href = window.location.origin + "/download" + window.location.pathname + "/" + this.getAttribute("data-file-name");
+        downloadLink.download = "";
+        downloadLink.click();
+        downloadLink.remove();
+      })
+    })
   }
 })

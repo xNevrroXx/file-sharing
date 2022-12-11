@@ -44,38 +44,38 @@ function routes(app: Express) {
   })
 
   app.get("/download/:path", (request, response) => {
-    const folder = request.params.path;
-    const targetFolder = path.join(USERS_FOLDER, "unzipped", folder);
+    const zippedFiles = request.params.path + ".zip";
+    const targetFolder = path.join(USERS_FOLDER, "zipped", zippedFiles);
 
     try {
-      const checkFolderResult = fs.statSync(targetFolder);
+      const checkIfExist = fs.statSync(targetFolder);
 
-      try {
-        const fileNames: string[] = fs.readdirSync(targetFolder);
-        if (fileNames.length === 0) {
-          throw new Error("There are no files");
-        }
-
-        response.json({
-          message: "There are files",
-          files: fileNames
-        })
-      }
-      catch (error) {
-        response.json({
-          message: "There aren't files"
-        })
-      }
+      response.sendFile(targetFolder);
     }
     catch (error) {
       response.status(404).json({
-        message: "There is no such user"
+        message: "There are no files"
       })
     }
+  })
+  app.get("/download/:folderName/:fileName", (request, response) => {
+    const folderName = request.params.folderName;
+    const fileName = request.params.fileName;
+    const targetFile = path.join(USERS_FOLDER, "unzipped", folderName, fileName);
 
+    try {
+      const checkIfExist = fs.statSync(targetFile);
+
+      response.sendFile(targetFile);
+    }
+    catch (error) {
+      response.status(404).json({
+        message: "There is no such file"
+      })
+    }
   })
 
-  htmlRoutes(app);
+  htmlRoutes(app, USERS_FOLDER);
 }
 
 module.exports = routes;

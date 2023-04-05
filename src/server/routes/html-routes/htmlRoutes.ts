@@ -1,10 +1,10 @@
 // types
 import {Express} from "express";
 // third-party modules
-const path = require("path");
-const fs = require("fs");
+const path  = require("path");
+const fs  = require("fs");
 // own modules
-const conversionSizeUnits = require("../../modules/conversion-size-units");
+const conversionSizeUnits = require("../../modules/conversion-size-units.js");
 
 function htmlRoutes(app: Express, USERS_FOLDER: string) {
   app.get("/", (request, response) => {
@@ -24,6 +24,7 @@ function htmlRoutes(app: Express, USERS_FOLDER: string) {
         const fileNames: string[] = fs.readdirSync(targetFolder);
         const filesInfo = [];
         let totalSizeFiles = 0;
+        let sizeAndUnits: {amount: string, units: string};
         if (fileNames.length === 0) {
           throw new Error("There are no files");
         }
@@ -37,11 +38,11 @@ function htmlRoutes(app: Express, USERS_FOLDER: string) {
           totalSizeFiles += fileInfo.size;
         }
 
-        totalSizeFiles = conversionSizeUnits(totalSizeFiles);
+        sizeAndUnits = conversionSizeUnits(totalSizeFiles);
         response.render("getting", {
           title: "file sharing - getting",
           files: filesInfo,
-          totalSize: totalSizeFiles
+          totalSize: sizeAndUnits
         });
       }
       catch (error) {

@@ -450,3 +450,30 @@
     fill: #33e45c;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  .modal {
+    left: 50%;
+    top: 50vh;
+    transform: translateX(-50%) translateY(-50%);
+    .modal-getting__check-transfer-files-btn {
+      justify-content: center;
+    }
+    .modal-getting__check-preview-text {
+      display: none;
+    }
+    &_right-full-height {
+      top: 90vh;
+      display: block;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      border-radius: 0;
+      transition: .5s all ease-in-out;
+      right: 0;
+    }
+  }
+}

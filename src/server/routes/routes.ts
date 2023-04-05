@@ -1,18 +1,24 @@
 // types
-import {Express, Request} from "express";
+import {Express, Request, Response} from "express";
 // third-party modules
 const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
-const {v4: uuidv4} = require("uuid");
 const AdmZip = require("adm-zip");
 // owm modules
-const htmlRoutes = require("./html-routes/htmlRoutes");
+const htmlRoutes = require("./html-routes/htmlRoutes.js");
 
 const USERS_FOLDER = path.join(__dirname, "..", "users-data");
+
+// @ts-ignore
 const storage = multer.diskStorage({
-  destination: function(request: Request, file: any, cb: (smth: null, path: string) => void) {
+// @ts-ignore
+  destination: function(request: Request, file: File, cb: (error: Error | null, destination: string) => void) {
+// @ts-ignore
     const folderPath = path.join(USERS_FOLDER, "unzipped", file.fieldname);
+    if (!fs.existsSync(path.join(USERS_FOLDER, "unzipped"))) {
+      fs.mkdirSync(path.join(USERS_FOLDER, "unzipped"), { recursive: true });
+    }
     if (!fs.existsSync(folderPath)) {
       fs.mkdirSync(folderPath);
     }
@@ -50,15 +56,15 @@ function routes(app: Express) {
     try {
       const checkIfExist = fs.statSync(targetFolder);
 
-      response.sendFile(targetFolder);
+      response.download(targetFolder);
     }
     catch (error) {
       response.status(404).json({
         message: "There are no files"
       })
     }
-  })
-  app.get("/download/:folderName/:fileName", (request, response) => {
+  }) 
+  app.get("/download/:folderName/:fileName", (request: Request<{ folderName: string, fileName: string}>, response: Response) => {
     const folderName = request.params.folderName;
     const fileName = request.params.fileName;
     const targetFile = path.join(USERS_FOLDER, "unzipped", folderName, fileName);
@@ -66,7 +72,8 @@ function routes(app: Express) {
     try {
       const checkIfExist = fs.statSync(targetFile);
 
-      response.sendFile(targetFile);
+      // @ts-ignore
+      response.download(targetFile, {dotfiles: "allow"});
     }
     catch (error) {
       response.status(404).json({

@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "CommonJS",
+    "target": "ES2016",
     "module": "CommonJS",
-    "moduleResolution": "node",
-    "allowJs": true,
+    "moduleResolution": "Node",
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
   },
   "include": [
-    "src/server/**/*.ts"
+    "./**/*.ts"
   ]
 }

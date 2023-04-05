@@ -1,14 +1,14 @@
 const gulp = require("gulp");
 const webpack = require("webpack-stream");
-const sass = require("gulp-sass")(require("sass"));
-const sourcemaps = require("gulp-sourcemaps")
+const sourcemaps = require("gulp-sourcemaps");
 const rename = require('gulp-rename');
 const ts = require("gulp-typescript");
-const tsProject = ts.createProject("tsconfig.json");
-const tsProjectServer = ts.createProject("server.tsconfig.json");
 const nodemon = require("gulp-nodemon");
+const sass = require('gulp-sass')(require('sass'));
 const env = require("gulp-env");
 
+const tsProject = ts.createProject("./src/tsconfig.json");
+const tsProjectServer =  ts.createProject("./src/server/tsconfig.json");
 const dist = "./dist/";
 const src = "./src/";
 
@@ -67,6 +67,9 @@ gulp.task("build-js", () => {
           {
             test: /\.m?js$/,
             exclude: /(node_modules|bower_components)/,
+            resolve: {
+              fullySpecified: false
+            },
             use: {
               loader: 'babel-loader',
               options: {

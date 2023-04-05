@@ -1,0 +1,4 @@
+PassengerNodejs /home/g/govoro4b/.local/bin/node
+PassengerAppRoot /home/g/govoro4b/file-sharing.ru/site
+PassengerAppType node
+PassengerStartupFile index.js

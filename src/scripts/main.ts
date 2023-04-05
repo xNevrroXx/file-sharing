@@ -106,15 +106,18 @@ window.addEventListener("DOMContentLoaded", () => {
       linkTextElem.addEventListener("click", function (event) {
         this.setSelectionRange(0, -1);
       })
-      copyLinkBtnElem.addEventListener("click", function (event) {
+      linkTextElem.addEventListener("click", copyLink);
+      copyLinkBtnElem.addEventListener("click", copyLink);
+
+      function copyLink (event: MouseEvent) {
         navigator.clipboard.writeText(linkTextElem.value)
-          .then(() => alert("Link has been copied"))
-          .catch(() => alert("We can't to copy link automatically, try it on your own"))
-          .finally(() => {
-            linkTextElem.focus();
-            linkTextElem.setSelectionRange(0, -1);
-          })
-      })
+            .then(() => alert("Link has been copied"))
+            .catch(() => alert("We can't to copy link automatically, try it on your own"))
+            .finally(() => {
+              linkTextElem.focus();
+              linkTextElem.setSelectionRange(0, -1);
+            })
+      }
     }
   }
   else {
